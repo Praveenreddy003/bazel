@@ -1,7 +1,12 @@
 pipeline {
   agent any
   stages {
-    stage('Publish image') {
+      stage ('Checkout') {
+       steps{
+            checkout scm 
+      }
+      }
+    stage('Bazel Build') {
       steps {
         sh 'bazel build hello-word'
       }

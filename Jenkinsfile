@@ -8,7 +8,7 @@ pipeline {
       }
     stage('Publish image') {
       steps {
-        sh 'bazel build hello-world'
+        sh '/var/lib/jenkins/workspace/Bazel pipeline/examples/cpp;bazel build hello-world'
       }
     }
   }

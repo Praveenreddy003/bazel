@@ -6,9 +6,9 @@ pipeline {
             checkout scm 
       }
       }
-    stage('Publish image') {
+    stage('Bezel build') {
       steps {
-        sh '/var/lib/jenkins/workspace/Bazel pipeline/examples/cpp;bazel build hello-world'
+        sh "cd /var/lib/jenkins/workspace/Bazel pipeline/examples/cpp;bazel build hello-world"
       }
     }
   }

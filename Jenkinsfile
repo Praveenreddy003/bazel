@@ -8,7 +8,7 @@ pipeline {
       }
     stage('Publish image') {
       steps {
-        sh 'bazel build hello-word'
+        sh 'bazel build hello-world'
       }
     }
   }

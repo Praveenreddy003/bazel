@@ -6,7 +6,7 @@ pipeline {
             checkout scm 
       }
       }
-    stage('Bezel build') {
+    stage('Bazel build') {
       steps {
         sh "cd /var/lib/jenkins/workspace/Bazel pipeline/examples/cpp;bazel build hello-world"
       }

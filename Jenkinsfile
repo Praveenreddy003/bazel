@@ -1,14 +1,17 @@
-pipeline {
-  agent any
+node {
   stages {
       stage ('Checkout') {
        steps{
-            checkout scm 
+            git 'https://github.com/Praveenreddy003/bazel.git'
       }
       }
     stage('Bazel build') {
       steps {
-        sh "cd /var/lib/jenkins/workspace/bazelnewproject/examples/cpp;bazel build hello-world"
+        sh '''
+        ls
+        cd examples/cpp
+        bazel build hello-world
+        '''
       }
     }
   }
